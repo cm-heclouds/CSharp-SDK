@@ -1,0 +1,192 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{44FA2510-0916-435A-A6D1-96F2C9ABCABC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>OneNET.Api</RootNamespace>
+    <AssemblyName>OneNETSDK</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\OneNETSDK.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.2\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DefaultOneNETClient.cs" />
+    <Compile Include="DefaultOneNETLogger.cs" />
+    <Compile Include="Entity\ApiKeyInfo.cs" />
+    <Compile Include="Entity\BinaryInfo.cs" />
+    <Compile Include="Entity\DataPoint.cs" />
+    <Compile Include="Entity\DataStream.cs" />
+    <Compile Include="Entity\DataStreamInfo.cs" />
+    <Compile Include="Entity\DeviceBasicInfo.cs" />
+    <Compile Include="Entity\LocationInfo.cs" />
+    <Compile Include="Entity\SearchDataPointReq.cs" />
+    <Compile Include="Entity\SearchDeviceReq.cs" />
+    <Compile Include="Entity\TriggerInfo.cs" />
+    <Compile Include="Entity\TriggerReq.cs" />
+    <Compile Include="Extensions\OneNETHelper.cs" />
+    <Compile Include="IOneNETClient.cs" />
+    <Compile Include="IOneNETLogger.cs" />
+    <Compile Include="IOneNETRequest.cs" />
+    <Compile Include="OneNetContext.cs" />
+    <Compile Include="Parser\IOneNETParser.cs" />
+    <Compile Include="Parser\IOneNETReader.cs" />
+    <Compile Include="Parser\OneNETAttribute.cs" />
+    <Compile Include="Parser\OneNETXmlParser.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="OneNETDictionary.cs" />
+    <Compile Include="OneNETException.cs" />
+    <Compile Include="OneNETObject.cs" />
+    <Compile Include="OneNETResponse.cs" />
+    <Compile Include="Request\BinData\NewBinDataRequest.cs" />
+    <Compile Include="Request\BinData\GetBinDataRequest.cs" />
+    <Compile Include="Request\Cmd\GetCmdRespRequest.cs" />
+    <Compile Include="Request\Cmd\GetCmdStatusRequest.cs" />
+    <Compile Include="Request\Cmd\SendCmdRequest.cs" />
+    <Compile Include="Request\DataPoint\NewDataPointRequest.cs" />
+    <Compile Include="Request\DataStream\DeleteDataStreamRequest.cs" />
+    <Compile Include="Request\DataStream\GetDataStreamRequest.cs" />
+    <Compile Include="Request\Devices\GetDeviceRequest.cs" />
+    <Compile Include="Request\DataStream\UpdateDataStreamRequest.cs" />
+    <Compile Include="Request\DataStream\NewDataStreamRequest.cs" />
+    <Compile Include="Request\Devices\NewDeviceRequest.cs" />
+    <Compile Include="Request\DataPoint\SearchDataPointRequest.cs" />
+    <Compile Include="Request\Devices\DeleteDeviceRequest.cs" />
+    <Compile Include="Request\Devices\SearchDeviceRequest.cs" />
+    <Compile Include="Request\Devices\UpdateDeviceRequest.cs" />
+    <Compile Include="Request\Keys\DeleteKeyRequest.cs" />
+    <Compile Include="Request\Keys\GetKeysRequest.cs" />
+    <Compile Include="Request\Keys\NewKeyRequest.cs" />
+    <Compile Include="Request\Keys\UpdateKeyRequest.cs" />
+    <Compile Include="Request\Others\SearchLogsRequest.cs" />
+    <Compile Include="Request\Others\SearchHistoryDataRequest.cs" />
+    <Compile Include="Request\Trigger\NewTriggerRequest.cs" />
+    <Compile Include="Request\Trigger\UpdateTriggerRequest.cs" />
+    <Compile Include="Request\Trigger\SearchTriggerRequest.cs" />
+    <Compile Include="Request\Trigger\GetTriggerRequest.cs" />
+    <Compile Include="Request\Trigger\DeleteTriggerRequest.cs" />
+    <Compile Include="Response\BinDataResponse.cs" />
+    <Compile Include="Response\CmdResponse.cs" />
+    <Compile Include="Response\CommonResponse.cs" />
+    <Compile Include="Response\GetDataStreamRsp.cs" />
+    <Compile Include="Response\GetDeviceRsp.cs" />
+    <Compile Include="Response\KeyResponse.cs" />
+    <Compile Include="Response\LogsResponse.cs" />
+    <Compile Include="Response\NewDeviceRsp.cs" />
+    <Compile Include="Response\SearchDataPointRsp.cs" />
+    <Compile Include="Response\SearchDeviceRsp.cs" />
+    <Compile Include="Response\SearchHistoryDataRsp.cs" />
+    <Compile Include="Response\TriggerResponse.cs" />
+    <Compile Include="Utils\FileItem.cs" />
+    <Compile Include="Utils\LowercaseJsonSerializer.cs" />
+    <Compile Include="Utils\OneNETUtils.cs" />
+    <Compile Include="Utils\RequestValidator.cs" />
+    <Compile Include="Utils\URIUtils.cs" />
+    <Compile Include="Utils\WebSocket\ByteOrder.cs" />
+    <Compile Include="Utils\WebSocket\CloseEventArgs.cs" />
+    <Compile Include="Utils\WebSocket\ErrorEventArgs.cs" />
+    <Compile Include="Utils\WebSocket\Ext.cs" />
+    <Compile Include="Utils\WebSocket\Frame\CloseStatusCode.cs" />
+    <Compile Include="Utils\WebSocket\Frame\Fin.cs" />
+    <Compile Include="Utils\WebSocket\Frame\Mask.cs" />
+    <Compile Include="Utils\WebSocket\Frame\Opcode.cs" />
+    <Compile Include="Utils\WebSocket\Frame\PayloadData.cs" />
+    <Compile Include="Utils\WebSocket\Frame\Rsv.cs" />
+    <Compile Include="Utils\WebSocket\Frame\WsFrame.cs" />
+    <Compile Include="Utils\WebSocket\Handshake.cs" />
+    <Compile Include="Utils\WebSocket\MessageEventArgs.cs" />
+    <Compile Include="Utils\WebSocket\Net\AuthenticationSchemes.cs" />
+    <Compile Include="Utils\WebSocket\Net\AuthenticationSchemeSelector.cs" />
+    <Compile Include="Utils\WebSocket\Net\ChunkedInputStream.cs" />
+    <Compile Include="Utils\WebSocket\Net\ChunkStream.cs" />
+    <Compile Include="Utils\WebSocket\Net\Cookie.cs" />
+    <Compile Include="Utils\WebSocket\Net\CookieCollection.cs" />
+    <Compile Include="Utils\WebSocket\Net\CookieException.cs" />
+    <Compile Include="Utils\WebSocket\Net\EndPointListener.cs" />
+    <Compile Include="Utils\WebSocket\Net\EndPointManager.cs" />
+    <Compile Include="Utils\WebSocket\Net\HttpConnection.cs" />
+    <Compile Include="Utils\WebSocket\Net\HttpListener.cs" />
+    <Compile Include="Utils\WebSocket\Net\HttpListenerContext.cs" />
+    <Compile Include="Utils\WebSocket\Net\HttpListenerException.cs" />
+    <Compile Include="Utils\WebSocket\Net\HttpListenerPrefixCollection.cs" />
+    <Compile Include="Utils\WebSocket\Net\HttpListenerRequest.cs" />
+    <Compile Include="Utils\WebSocket\Net\HttpListenerResponse.cs" />
+    <Compile Include="Utils\WebSocket\Net\HttpListenerWebSocketContext.cs" />
+    <Compile Include="Utils\WebSocket\Net\HttpStatusCode.cs" />
+    <Compile Include="Utils\WebSocket\Net\HttpStreamAsyncResult.cs" />
+    <Compile Include="Utils\WebSocket\Net\HttpUtility.cs" />
+    <Compile Include="Utils\WebSocket\Net\HttpVersion.cs" />
+    <Compile Include="Utils\WebSocket\Net\ListenerAsyncResult.cs" />
+    <Compile Include="Utils\WebSocket\Net\ListenerPrefix.cs" />
+    <Compile Include="Utils\WebSocket\Net\RequestStream.cs" />
+    <Compile Include="Utils\WebSocket\Net\ResponseStream.cs" />
+    <Compile Include="Utils\WebSocket\Net\Security\SslStream.cs" />
+    <Compile Include="Utils\WebSocket\Net\Sockets\TcpListenerWebSocketContext.cs" />
+    <Compile Include="Utils\WebSocket\Net\WebHeaderCollection.cs" />
+    <Compile Include="Utils\WebSocket\Net\WebSocketContext.cs" />
+    <Compile Include="Utils\WebSocket\RequestHandshake.cs" />
+    <Compile Include="Utils\WebSocket\ResponseHandshake.cs" />
+    <Compile Include="Utils\WebSocket\Server\HttpServer.cs" />
+    <Compile Include="Utils\WebSocket\Server\IServiceHost.cs" />
+    <Compile Include="Utils\WebSocket\Server\ResponseEventArgs.cs" />
+    <Compile Include="Utils\WebSocket\Server\ServiceManager.cs" />
+    <Compile Include="Utils\WebSocket\Server\SessionManager.cs" />
+    <Compile Include="Utils\WebSocket\Server\WebSocketServer.cs" />
+    <Compile Include="Utils\WebSocket\Server\WebSocketServerBase.cs" />
+    <Compile Include="Utils\WebSocket\Server\WebSocketService.cs" />
+    <Compile Include="Utils\WebSocket\Server\WebSocketServiceHost.cs" />
+    <Compile Include="Utils\WebSocket\SynchronizedCollection.cs" />
+    <Compile Include="Utils\WebSocket\WebSocket.cs" />
+    <Compile Include="Utils\WebSocket\WsReceivedTooBigMessageException.cs" />
+    <Compile Include="Utils\WebSocket\WsState.cs" />
+    <Compile Include="Utils\WebSocket\WsStream.cs" />
+    <Compile Include="Utils\WebUtils.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
