@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Newtonsoft.Json.Linq;
 using OneNET.Api;
 using OneNET.Api.Entity;
 using OneNET.Api.Request;
@@ -11,7 +12,7 @@ namespace APITest
     public class DeviceTest
     {
         private const string url = "api.heclouds.com";
-        private const string appkey = "Hf1hQbdPeOEwlYs04nyzmD2fdQw=";
+        private const string appkey = "yourapikey";//您在OneNET平台的APIKey
 
         [TestMethod]
         public void TestGetDevice()
@@ -80,6 +81,32 @@ namespace APITest
                 Protocol = Scheme.HTTP,
                 NewDevice = device
             };               
+            var resp = client.Execute(req);
+            Assert.IsFalse(resp.IsError);
+            Assert.IsNotNull(resp.Data);
+            Assert.IsTrue(resp.Data.Device_Id > 0);
+        }
+
+        [TestMethod]
+        public void TestAddEDPDevice()
+        {
+            var client = new DefaultOneNETClient(url, appkey, "");
+            var device = new DeviceBasicInfo
+            {
+                Title = "C#添加EDP设备Auth_Info",
+                Desc = "C# SDK添加EDP设备",
+                Private = true,
+                OnLine = false,
+                Tags = new[] { "测试", "sdk" },
+                Protocol = "EDP",
+                Auth_Info = new JRaw("{\"sim\":123456445}"),
+                Location = new LocationInfo(370000, 18.609997, 77.03403)
+            };
+            var req = new NewDeviceRequest
+            {
+                Protocol = Scheme.HTTP,
+                NewDevice = device
+            };
             var resp = client.Execute(req);
             Assert.IsFalse(resp.IsError);
             Assert.IsNotNull(resp.Data);

@@ -77,6 +77,7 @@
   <ItemGroup>
     <Content Include="files\Shaq.jpg" />
     <Content Include="files\test.txt" />
+    <Content Include="files\videotest.mp4" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />

@@ -10,7 +10,7 @@ namespace APITest
     public class DataStreamTest
     {
         private const string url = "api.heclouds.com";
-        private const string appkey = "Hf1hQbdPeOEwlYs04nyzmD2fdQw=";
+        private const string appkey = "yourapikey";//您在OneNET平台的APIKey
 
         [TestMethod]
         public void TestGetDataStream()

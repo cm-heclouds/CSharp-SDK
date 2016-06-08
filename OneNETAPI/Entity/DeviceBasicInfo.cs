@@ -57,7 +57,7 @@ namespace OneNET.Api.Entity
         /// <summary>
         /// 对于MODBUS设备，应填写：{“登录报文的phone字段”:”登录报文的SVRPWD字段”} 对其他设备，此字段可选
         /// </summary>
-        public Object AuthInfo;
+        public Object Auth_Info;
         /// <summary>
         /// 对于MODBUS设备，表示设备云主动查询设备的时间间隔，单位秒，其他设备类型无效
         /// </summary>
