@@ -1,7 +1,10 @@
 ﻿using System;
+using System.IO;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Newtonsoft.Json;
 using OneNET.Api;
 using OneNET.Api.Request;
+using OneNET.Api.Response;
 
 namespace APITest
 {
@@ -25,6 +28,28 @@ namespace APITest
             Console.WriteLine(rsp.Body);
             Assert.IsNotNull(rsp.Data);
             Assert.IsNotNull(rsp.Data.Cmd_uuid);
+        }
+
+        [TestMethod]
+        public void TestSendBinDataCmd()
+        {
+            var client = new DefaultOneNETClient(url, appkey, "");
+            //todo:待测
+            var fp = @"../../files/test.txt";
+            var fi = new FileInfo(fp);
+            var len = fi.Length;
+            var fs = new FileStream(fp, FileMode.Open);
+            var buffer = new byte[len];
+            fs.Read(buffer, 0, (int)len);
+            fs.Close();
+
+            var req = new SendCmdRequest { DeviceID = 3081523, Protocol = Scheme.HTTP, CmdContent = buffer, IsByte = true };
+            var rsp = client.Execute(req);
+            Assert.IsFalse(rsp.IsError);
+            Console.WriteLine(rsp.Body);
+            var body = JsonConvert.DeserializeObject<CmdSendResp>(rsp.Body);
+            Assert.IsNotNull(rsp.Data);
+            Assert.IsNotNull(body.Data.Cmd_uuid);
         }
 
         [TestMethod]

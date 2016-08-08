@@ -25,6 +25,8 @@ namespace OneNET.Api.Request
         /// </summary>
         public Object CmdContent;
 
+        public bool IsByte;
+
         private IDictionary<string, string> otherParameters;
 
         /// <summary>
@@ -71,7 +73,7 @@ namespace OneNET.Api.Request
 
         public bool IsRequestForByte()
         {
-            return false;
+            return IsByte;
         }
     }
 }
