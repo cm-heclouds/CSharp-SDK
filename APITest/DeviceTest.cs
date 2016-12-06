@@ -74,6 +74,8 @@ namespace APITest
                 OnLine = false,
                 Tags = new[] { "测试", "sdk" },
                 Protocol = "HTTP",
+                Auth_Info =  new JRaw("testauthinfo123yyy"),
+                Other = new JRaw("{\"sim\":123456445}"),
                 Location = new LocationInfo(370000, 17.609997, 177.03403)
             };
             var req = new NewDeviceRequest

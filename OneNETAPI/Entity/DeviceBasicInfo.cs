@@ -55,7 +55,9 @@ namespace OneNET.Api.Entity
         /// </summary>
         public String Create_Time;
         /// <summary>
-        /// 对于MODBUS设备，应填写：{“登录报文的phone字段”:”登录报文的SVRPWD字段”} 对其他设备，此字段可选
+        /// <para>对于MODBUS设备，应填写：{“登录报文的phone字段”:”登录报文的SVRPWD字段”}。对其他设备，此字段可选</para>
+        /// <para>请注意：若要设置普通字符串格式的auth_info, 也请使用JRaw处理一次</para>
+        /// <para>示例：new JRaw("testauthinfo123yyy"), new JRaw("{\"sim\":123456445}")</para>
         /// </summary>
         public Object Auth_Info;
         /// <summary>
@@ -65,6 +67,7 @@ namespace OneNET.Api.Entity
 
         /// <summary>
         /// 其他信息
+        /// <para>示例：new JRaw("{\"sim\":123456445}")</para>
         /// </summary>
         public Object Other;
     }
