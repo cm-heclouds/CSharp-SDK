@@ -1,5 +1,5 @@
 # OneNET_SDK
-中移物联网产品OneNET的SDK，目前本Repository仅包含C#版本，如需Java等其他版本以及了解更多，请前往https://open.iot.10086.cn/doc 查看
+中移物联网产品OneNET的SDK，目前本Repository仅包含C#版本，如需Java等其他版本以及了解更多，请前往<a href="https://open.iot.10086.cn/doc" target="_blank">https://open.iot.10086.cn/doc</a> 查看
 
 本程序是中移物联的OneNET公众版C#版本的SDK(完整版本)。.NET版本为4.0。
 
