@@ -10,7 +10,7 @@ namespace APITest
     public class TriggerSDKTest
     {
         private const string url = "api.heclouds.com";
-        private const string appkey = "Hf1hQbdPeOEwlYs04nyzmD2fdQw=";//您在OneNET平台的APIKey
+        private const string appkey = "yourkey=";//您在OneNET平台的APIKey
 
         [TestMethod]
         public void TestAddTrigger()

@@ -12,8 +12,8 @@ namespace APITest
     public class DeviceTest
     {
         private const string url = "api.heclouds.com";
-        private const string appkey = "Hf1hQbdPeOEwlYs04nyzmD2fdQw=";//您在OneNET平台的APIKey
-        private const string register_code = "C7fmv3bM3ghed8vx";
+        private const string appkey = "yourkey";//您在OneNET平台的APIKey
+        private const string register_code = "yourcode";
 
         [TestMethod]
         public void TestRegister()

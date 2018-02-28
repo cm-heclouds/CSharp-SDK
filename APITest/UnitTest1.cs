@@ -12,7 +12,7 @@ namespace APITest
         [TestMethod]
         public void TestMethod1()
         {
-            var url = "https://api.github.com/?access_token=bfddaa1d8383fc8107282427ab6015b014a428a2";
+            var url = "https://api.github.com/?access_token=";
 
             var webUtils = new WebUtils();
             var result = webUtils.DoGet(url, null, "Accept: application/vnd.github.v3+json");
