@@ -12,7 +12,32 @@ namespace APITest
     public class DeviceTest
     {
         private const string url = "api.heclouds.com";
-        private const string appkey = "yourapikey";//您在OneNET平台的APIKey
+        private const string appkey = "Hf1hQbdPeOEwlYs04nyzmD2fdQw=";//您在OneNET平台的APIKey
+        private const string register_code = "C7fmv3bM3ghed8vx";
+
+        [TestMethod]
+        public void TestRegister()
+        {
+            var client = new DefaultOneNETClient(url, "", "");
+            var req = new DeviceRegisterRequest { 
+                RegisterCode = register_code,
+                NewDevice = { SN = "yz123test", Title = "C#注册设备"},
+                Protocol = Scheme.HTTP };
+            var resp = client.Execute(req);
+            Assert.IsFalse(resp.IsError);
+            Assert.IsNotNull(resp.Data);
+            Assert.IsTrue(resp.Data.Device_Id > 0);
+            Assert.IsNotNull(resp.Data.Key);
+        }
+
+        [TestMethod]
+        public void TestRegisterAttr()
+        {
+            var client = new DefaultOneNETClient(url, appkey, "");
+            var req = new RegisterAttrRequest { DeviceRegisterAttr = { Allow_Dup = false } };
+            var resp = client.Execute(req);
+            Assert.IsFalse(resp.IsError);
+        }
 
         [TestMethod]
         public void TestGetDevice()

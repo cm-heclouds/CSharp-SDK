@@ -71,4 +71,16 @@ namespace OneNET.Api.Entity
         /// </summary>
         public Object Other;
     }
+
+    public class DeviceRegisterInfo
+    {
+        public string SN;
+        public string Mac;
+        public string Title;
+    }
+
+    public class DeviceRegisterAttr
+    {
+        public bool Allow_Dup;
+    }
 }

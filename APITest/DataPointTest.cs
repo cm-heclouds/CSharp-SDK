@@ -11,7 +11,7 @@ namespace APITest
     public class DataPointTest
     {
         private const string url = "api.heclouds.com";
-        private const string appkey = "yourapikey";//您在OneNET平台的APIKey
+        private const string appkey = "Hf1hQbdPeOEwlYs04nyzmD2fdQw=";//您在OneNET平台的APIKey
 
         [TestMethod]
         public void TestAddNewDataPoint()

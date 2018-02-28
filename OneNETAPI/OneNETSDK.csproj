@@ -81,12 +81,14 @@
     <Compile Include="Request\DataPoint\NewDataPointRequest.cs" />
     <Compile Include="Request\DataStream\DeleteDataStreamRequest.cs" />
     <Compile Include="Request\DataStream\GetDataStreamRequest.cs" />
+    <Compile Include="Request\Devices\DeviceRegisterRequest.cs" />
     <Compile Include="Request\Devices\GetDeviceRequest.cs" />
     <Compile Include="Request\DataStream\UpdateDataStreamRequest.cs" />
     <Compile Include="Request\DataStream\NewDataStreamRequest.cs" />
     <Compile Include="Request\Devices\NewDeviceRequest.cs" />
     <Compile Include="Request\DataPoint\SearchDataPointRequest.cs" />
     <Compile Include="Request\Devices\DeleteDeviceRequest.cs" />
+    <Compile Include="Request\Devices\RegisterAttrRequest.cs" />
     <Compile Include="Request\Devices\SearchDeviceRequest.cs" />
     <Compile Include="Request\Devices\UpdateDeviceRequest.cs" />
     <Compile Include="Request\Keys\DeleteKeyRequest.cs" />

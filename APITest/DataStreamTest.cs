@@ -10,13 +10,14 @@ namespace APITest
     public class DataStreamTest
     {
         private const string url = "api.heclouds.com";
-        private const string appkey = "yourapikey";//您在OneNET平台的APIKey
+        private const string appkey = "Hf1hQbdPeOEwlYs04nyzmD2fdQw=";//您在OneNET平台的APIKey
 
         [TestMethod]
         public void TestGetDataStream()
         {
             var client = new DefaultOneNETClient(url, appkey, "");
             var req = new GetDataStreamRequest {DeviceID = "768719", DataStreamId = "x", Protocol = Scheme.HTTP};
+            req.AddOtherParameter("newAdd", "true");
             var resp = client.Execute(req);
             Assert.IsFalse(resp.IsError);
             Assert.AreEqual(0, resp.Errno);

@@ -15,7 +15,7 @@ namespace APITest
     public class CmdTest
     {
         private const string url = "api.heclouds.com";
-        private const string appkey = "yourapikey";//您在OneNET平台的APIKey
+        private const string appkey = "Hf1hQbdPeOEwlYs04nyzmD2fdQw=";//您在OneNET平台的APIKey
 
         [TestMethod]
         public void TestSendCmd()
@@ -28,6 +28,15 @@ namespace APITest
             Console.WriteLine(rsp.Body);
             Assert.IsNotNull(rsp.Data);
             Assert.IsNotNull(rsp.Data.Cmd_uuid);
+        }
+
+        [TestMethod]
+        public void TestStr() 
+        {
+            var str = "receivedhello";
+            System.Text.ASCIIEncoding encoding = new System.Text.ASCIIEncoding();
+            Byte[] bytes = encoding.GetBytes(str);
+            Assert.IsNotNull(bytes);
         }
 
         [TestMethod]
